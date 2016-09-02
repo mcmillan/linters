@@ -16,6 +16,7 @@ This service uses the following linters:
   * [haml-lint](https://github.com/brigade/haml-lint) for HAML
   * [jshint](http://jshint.com) for JavaScript
   * [eslint](http://eslint.org) for JavaScript and JSX
+  * [remark-lint](https://github.com/wooorm/remark-lint) for Markdown
 
 ## Getting Started
 
