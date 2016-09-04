@@ -16,13 +16,9 @@ module Linters
       end
 
       def config_content(content)
-        config(content).to_yaml
-      end
-
-      private
-
-      def config(content)
-        Config.new(content: content, default_config_path: "config/rubocop.yml")
+        if YAML.safe_load(content, [Regexp]).any?
+          content
+        end
       end
     end
   end

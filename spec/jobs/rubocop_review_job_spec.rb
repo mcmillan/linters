@@ -35,7 +35,7 @@ RSpec.describe RubocopReviewJob do
     end
   end
 
-  context "when sytnax is invalid" do
+  context "when syntax is invalid" do
     it "reports an error as violation" do
       expect_violations_in_file(
         content: "def yo 42 end",
