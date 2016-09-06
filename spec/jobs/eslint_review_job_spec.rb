@@ -11,7 +11,7 @@ RSpec.describe EslintReviewJob do
         violations: [
           {
             line: 2,
-            message: "'hello' is defined but never used  no-unused-vars",
+            message: "Unexpected console statement  no-console",
           },
         ],
       )
@@ -23,7 +23,7 @@ RSpec.describe EslintReviewJob do
       config = <<~JSON
         {
           "rules": {
-            "no-unused-vars": "off"
+            "no-console": "off"
           }
         }
       JSON
@@ -45,7 +45,7 @@ RSpec.describe EslintReviewJob do
         violations: [
           {
             line: 2,
-            message: "'hello' is defined but never used  no-unused-vars",
+            message: "Unexpected console statement  no-console",
           },
         ],
       )
@@ -55,7 +55,7 @@ RSpec.describe EslintReviewJob do
   def content
     <<~JS
       'use strict';
-      function hello() { }
+      console.log('hello');
     JS
   end
 end
